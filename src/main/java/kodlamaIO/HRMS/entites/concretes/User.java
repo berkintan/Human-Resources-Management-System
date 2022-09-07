@@ -7,18 +7,18 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@Table(name="users")
 @Data
-@Table(name="job_titles")
 @AllArgsConstructor
 @NoArgsConstructor
-public class JobTitle {
-
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private int id;
-
-    @Column(name="title")
-    private String title;
-
+    @Column(name="email")
+    private String email;
+    @Column(name="password")
+    private String password;
 }

@@ -19,9 +19,9 @@ public class JobTitlesController {
     public JobTitlesController(JobTitleService jobTitleService) {
         this.jobTitleService = jobTitleService;
     }
-
     @GetMapping("/getall")
     public List<JobTitle> getAll() {
         return this.jobTitleService.getAll();
     }
+
 }
